@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<section class="widget post-right-item">
+    <h4 class="post-right-title">热门推荐</h4>
+    <ul class="post-hot clearfix">
+        {% for reco2_artical in reco2_articals %}
+            <li>
+                <div class="img">
+                    <a href="{% url 'blogapp:article_detail' reco2_artical.category.code reco2_artical.pk %}" title="{{ reco2_artical.title }}">
+                        <img src="{{ MEDIA_URL }}{{ reco2_artical.img }}" srcset="{{ MEDIA_URL }}{{ reco2_artical.img }}" alt="{{ reco2_artical.title }}"
+                             class="wp-post-image" width="120" height="80"/>
+                    </a>
+                </div>
+                <div class="text">
+                    <a href="{% url 'blogapp:article_detail' reco2_artical.category.code reco2_artical.pk %}" title="{{ reco2_artical.title }}"
+                       target="_blank">{{ reco2_artical.title }}</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="widget post-right-item"><h4 class="post-right-title">所有标签</h4>
+    <div class="tags">
+        {% for tag in tags %}
+            <a href="{% url 'blogapp:tag_article_list' tag.code %}">{{ tag.name }}</a>
+        {% endfor %}
+    </div>
+</section>
+<!-- /关注我们 -->
+<div class="post-right-item">
+    <h4 class="post-right-title">关注我</h4>
+    <div class="wid-about">
+        <p>汪春旺博客网站，欢迎关注！</p>
+        <img src="{% static "blogapp/picture/微信支付.jpg" %}" alt="微信二维码" width="160" height="220">
+    </div>
+    <div class="wid-about">
+        <p><strong>联系方式:</strong></p>
+        <p>QQ:2284914944</p>
+        <p>Email：2284914944@qq.com</p>
+    </div>
+</div>
