@@ -5,7 +5,16 @@
         <section class="post-left">
             <div class="breadcrumb">您的位置： <a itemprop="breadcrumb" href="{% url 'blogapp:index' %}">首页</a> » <a
                     href="{% url 'blogapp:article_list' catecode %}">{{ this_artical.category.name }}</a> »
-                <span class="current">正文</span></div>
+                <span class="current">正文</span>
+                {% if messages %}
+                    <span style="color: #FBA40F; float: right; font-weight: bold">
+                        {% for msg in messages %}
+{#                            alert('{{ msg.message }}');#}
+                            {{ msg.message }}
+                        {% endfor %}
+                    </span>
+                {% endif %}
+            </div>
             <div class="post-main clearfix">
                 <h1 class="post-title">{{ this_artical.title }}</h1>
                 <div class="post-con clearfix">

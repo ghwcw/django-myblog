@@ -1,5 +1,6 @@
 from io import BytesIO
 
+from django.contrib import messages
 from django.core import paginator
 from django.db.models import Q
 from django.http import HttpResponse
@@ -87,10 +88,10 @@ class ArticalListView(View):
         page_num = request.GET.get('page')  # 获取当前页码
         try:
             page_list_obj = pn.page(page_num)  # 进行分页，返回数据列表（将之传给模板）
-        except paginator.PageNotAnInteger:
+        # except paginator.PageNotAnInteger:
+        #     page_list_obj = pn.page(1)
+        except paginator.InvalidPage:   # 无效页码异常处理
             page_list_obj = pn.page(1)
-        except paginator.InvalidPage:
-            page_list_obj = pn.page(pn.num_pages)
 
         context = {
             'cate': cate,
@@ -131,6 +132,7 @@ class ArticalDetailView(View):
         this_artical.save()
         context = locals()
         context.update(get_globalvars(request))
+        messages.success(request, "欢迎阅读斯文！")
         return render(request=request, template_name='blogapp/show.html', context=context)
 
 
