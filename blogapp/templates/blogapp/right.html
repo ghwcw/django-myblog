@@ -5,7 +5,7 @@
         {% for reco2_artical in reco2_articals %}
             <li>
                 <div class="img">
-                    <a href="{% url 'blogapp:article_detail' reco2_artical.category.code reco2_artical.pk %}" title="{{ reco2_artical.title }}">
+                    <a href="{% url 'blogapp:article_detail' reco2_artical.category.code reco2_artical.pk %}" title="{{ reco2_artical.title }}" style="display: block; overflow: hidden">
                         <img src="{{ MEDIA_URL }}{{ reco2_artical.img }}" srcset="{{ MEDIA_URL }}{{ reco2_artical.img }}" alt="{{ reco2_artical.title }}"
                              class="wp-post-image" width="120" height="80"/>
                     </a>
