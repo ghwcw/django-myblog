@@ -67,6 +67,20 @@
 <script type='text/javascript' src='{% static "blogapp/js/loader.js" %}'></script>
 <script type='text/javascript' src='{% static "blogapp/js/bj-lazy-load.min.js" %}'></script>
 <script type='text/javascript' src='{% static "blogapp/js/os.js" %}'></script>
+<script>
+    //if($){
+        //alert("引入jquery");
+    //}else{
+       // alert("没有引入jquery");
+    //}
 
+    $(function () {
+        $('.wp-post-image').mouseout(function () {
+            //alert(this);
+            $(this).addClass('wp-post-image-mouseout');
+        });
+
+    });
+</script>
 </body>
 </html>
