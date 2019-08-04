@@ -9,7 +9,7 @@
                 {% if messages %}
                     <span style="color: #FBA40F; float: right; font-weight: bold">
                         {% for msg in messages %}
-{#                            alert('{{ msg.message }}');#}
+                            {#                            alert('{{ msg.message }}');#}
                             {{ msg.message }}
                         {% endfor %}
                     </span>
@@ -38,14 +38,16 @@
                     <div>
                         <div><b>上一篇：</b>
                             {% if next_artical %}
-                                <a href="{% url 'blogapp:article_detail' catecode next_artical.pk %}" class="article-tag">{{ next_artical }}</a>
+                                <a href="{% url 'blogapp:article_detail' catecode next_artical.pk %}"
+                                   class="article-tag">{{ next_artical }}</a>
                             {% else %}
                                 没有了
                             {% endif %}
                         </div>
                         <div><b>下一篇：</b>
                             {% if pre_artical %}
-                                <a href="{% url 'blogapp:article_detail' catecode pre_artical.pk %}" class="article-tag">{{ pre_artical }}</a>
+                                <a href="{% url 'blogapp:article_detail' catecode pre_artical.pk %}"
+                                   class="article-tag">{{ pre_artical }}</a>
                             {% else %}
                                 没有了
                             {% endif %}
@@ -64,13 +66,15 @@
                     {% for inte in interest_articals %}
                         <li>
                             <div class="pic">
-                                <a href="{% url 'blogapp:article_detail' catecode inte.pk %}" title="{{ inte.title }}"><img
+                                <a href="{% url 'blogapp:article_detail' catecode inte.pk %}"
+                                   title="{{ inte.title }}"><img
                                         src="{{ MEDIA_URL }}{{ inte.img }}"
                                         srcset="{{ MEDIA_URL }}{{ inte.img }}"
                                         alt="{{ inte.title }}" class="wp-post-image" width="145"
                                         height="100"/></a>
                             </div>
-                            <a class="descript " href="{% url 'blogapp:article_detail' catecode inte.pk %}" rel="bookmark"
+                            <a class="descript " href="{% url 'blogapp:article_detail' catecode inte.pk %}"
+                               rel="bookmark"
                                title="{{ inte.title }}">{{ inte.title }}</a>
                         </li>
                     {% endfor %}

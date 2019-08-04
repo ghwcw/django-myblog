@@ -68,11 +68,16 @@ zoom: 1; vertical-align: top; margin-top: 5px; margin-left: -8px; line-height: 1
 }
 .logoimg{animation: logo 0.5s infinite alternate}
 @keyframes logo {
-	100%{transform: scale(1.4,1.4)}
+	100%{transform: scale(1.4, 1.4)}
 }
-.wp-post-image:hover{animation: banimg 0.3s forwards}
+.wp-post-image:hover{animation: banimg 0.3s forwards; }
 @keyframes banimg {
-    100%{transform: scale(1.5,1.5);}
+    100%{transform: scale(1.5, 1.5)}
+}
+.wp-post-image-mouseout{animation: mt 0.3s; }
+@keyframes mt {
+    0%{transform: scale(1.4, 1.4)}
+    100%{transform: scale(1, 1)}
 }
 .fix-list li a:hover { color: #3498DB; }
 .fix-sel, .current-menu-item, .current_page_item { font-weight: bold; border-bottom: 4px solid #d9534f; }

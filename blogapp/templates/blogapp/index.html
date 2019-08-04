@@ -97,4 +97,19 @@
             </ul>
         </div>
     </div>
+    <script>
+    //if($){
+        //alert("引入jquery");
+    //}else{
+       // alert("没有引入jquery");
+    //}
+
+    $(function () {
+        $('.wp-post-image').mouseout(function () {
+            //alert(this);
+            $(this).addClass('wp-post-image-mouseout');
+        });
+
+    });
+    </script>
 {% endblock %}
