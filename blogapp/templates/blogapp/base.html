@@ -24,7 +24,7 @@
     <meta name="keywords" content="互联网,产品经理,产品设计,用户体验,交互设计,网站运营,移动互联网">
     <meta name="description" content="聚焦互联网前沿资讯，网络精华内容，交流产品心得。 每天为你速递最新、最鲜、最有料的互联网科技资讯！">
 </head>
-<body class="home blog site-layout-2">
+<body class="home blog site-layout-2" onload="get_curr_time()">
 <!-- 头部 -->
 <header class="fix-wrap" id="fix-wrap">
     <div class="fix-main clearfix pr" id="fix-main" _hover-ignore="1">
@@ -81,6 +81,33 @@
         });
 
     });
+
+    // 给aboute.html添加时间
+    function get_curr_time(){
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth() + 1;
+        var date = today.getDate();
+        var hour = today.getHours();
+        var minutes = today.getMinutes();
+        var second = today.getSeconds();
+        hour = zero_prefix(hour);
+        minutes = zero_prefix(minutes);
+        second = zero_prefix(second);
+        //alert(year+'年'+month+'月'+date+'日 '+hour+':'+minutes+':'+second);
+        $('#get_curr_time').text(year+'年'+month+'月'+date+'日 '+hour+':'+minutes+':'+second);
+        setInterval('get_curr_time()', 1000);
+
+    }
+
+    // 时间数字不足10补零前缀
+    function zero_prefix(t){
+        if(t<10){
+            t = '0' + t;
+        }
+        return t;
+    }
+
 </script>
 </body>
 </html>
