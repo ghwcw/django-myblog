@@ -96,7 +96,7 @@
         second = zero_prefix(second);
         //alert(year+'年'+month+'月'+date+'日 '+hour+':'+minutes+':'+second);
         $('#get_curr_time').text(year+'年'+month+'月'+date+'日 '+hour+':'+minutes+':'+second);
-        setInterval('get_curr_time()', 1000);
+        setTimeout('get_curr_time()', 1000);
 
     }
 
