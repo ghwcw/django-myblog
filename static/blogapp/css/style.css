@@ -76,7 +76,7 @@ zoom: 1; vertical-align: top; margin-top: 5px; margin-left: -8px; line-height: 1
 }
 .wp-post-image-mouseout{animation: mt 0.3s; }
 @keyframes mt {
-    0%{transform: scale(1.4, 1.4)}
+    0%{transform: scale(1.5, 1.5)}
     100%{transform: scale(1, 1)}
 }
 .fix-list li a:hover { color: #3498DB; }
