@@ -90,7 +90,7 @@ class ArticalListView(View):
             page_list_obj = pn.page(page_num)  # 进行分页，返回数据列表（将之传给模板）
         # except paginator.PageNotAnInteger:
         #     page_list_obj = pn.page(1)
-        except paginator.InvalidPage:   # 无效页码异常处理
+        except paginator.InvalidPage:  # 无效页码异常处理
             page_list_obj = pn.page(1)
 
         context = {
@@ -218,15 +218,17 @@ class Test(View):
     """
     测试
     """
+
     def get(self, request):
         response = HttpResponse(content_type='application/pdf')
         response['Content-Disposition'] = 'attachment; filename="somefilename.pdf"'
 
         buffer = BytesIO()
         c = Canvas(buffer)
-        pdfmetrics.registerFont(TTFont('simsun', 'simsun.ttc'))     # 支持中文
+        pdfmetrics.registerFont(TTFont('simsun', 'simsun.ttc'))  # 支持中文
         Canvas.setFont(c, "simsun", 12)
-        c.drawString(0, 500, '使用ReportLab创建复杂的PDF文档时，可以考虑使用io库作为PDF文件的临时保存地点。这个库提供了一个类似于文件的对象接口，非常实用。 下面的例子是上面的“Hello World”示例采用io重写后的样子：')
+        c.drawString(0, 500,
+                     '使用ReportLab创建复杂的PDF文档时，可以考虑使用io库作为PDF文件的临时保存地点。这个库提供了一个类似于文件的对象接口，非常实用。 下面的例子是上面的“Hello World”示例采用io重写后的样子：')
         c.showPage()
         c.save()
         pdf = buffer.getvalue()
@@ -234,6 +236,4 @@ class Test(View):
         buffer.close()
 
         return response
-
-
 

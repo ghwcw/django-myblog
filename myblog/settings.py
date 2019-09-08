@@ -25,7 +25,7 @@ sys.path.append(os.path.join(BASE_DIR, 'extraapps'))
 SECRET_KEY = 'lxt3sr_4m#f60m@)8+u01pji9(6mtw8!5@fjuo0c5t5r%zc+ti'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ADMINS = [('Wong', 'wongnina@vip.qq.com')]
 
