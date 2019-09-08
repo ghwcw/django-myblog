@@ -27,7 +27,7 @@ SECRET_KEY = 'lxt3sr_4m#f60m@)8+u01pji9(6mtw8!5@fjuo0c5t5r%zc+ti'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ADMINS = [('Wong', 'wongnina@vip.qq.com')]
+ADMINS = [('Wong', 'wangchunwang@dhcc.com.cn')]
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
