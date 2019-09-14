@@ -5,7 +5,6 @@ from django.core import paginator
 from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render
-
 # Create your views here.
 from django.views.generic.base import View
 from reportlab.pdfbase import pdfmetrics
@@ -182,9 +181,10 @@ class SearchView(View):
         # tags = Tag.objects.all()
 
         # 获取关键字
-        keyword = request.GET.get('keyword', '')
-        if keyword:
-            search_articles = Artical.objects.filter(Q(title__icontains=keyword) | Q(body__icontains=keyword))
+        keywords = request.GET.get('keywords', '')
+
+        if keywords:
+            search_articles = Artical.objects.filter(Q(title__icontains=keywords) | Q(body__icontains=keywords))
         else:
             search_articles = Artical.objects.order_by('-create_time')
 
@@ -236,4 +236,3 @@ class Test(View):
         buffer.close()
 
         return response
-

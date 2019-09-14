@@ -31,8 +31,4 @@
 # for i in [1,2,3]:
 #     print(i)
 
-
-import datetime
-print(datetime.date.today())
-
-
+# print(datetime.date.today())

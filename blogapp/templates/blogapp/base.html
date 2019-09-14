@@ -42,7 +42,7 @@
         </nav>
         <!--搜索栏 通过GET发送请求-->
         <form method="get" class="index-search  hidden-xs" action="{% url 'blogapp:search' %}">
-            <input class="text" name="keyword" type="text" placeholder="输入关键字" value="{{ keyword }}">
+            <input class="text" name="keywords" type="text" placeholder="输入关键字" value="{{ keywords }}">
             <button class="submit" type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>

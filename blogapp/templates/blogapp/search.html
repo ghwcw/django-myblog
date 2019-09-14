@@ -14,7 +14,7 @@
                         <div class="article-box clearfix excerpt-1">
                             <div class="col-md-4">
                                 <div class="thumbnail">
-                                    <a href="{% url 'blogapp:article_detail' article.category.code article.pk %}"
+                                    <a href="{% url 'blogapp:article_detail' article.category.code article.pk %} " style="display: block; overflow: hidden"
                                        title="{{ article.title }}">
                                         <img src="{{ MEDIA_URL }}{{ article.img }}"
                                              srcset="{{ MEDIA_URL }}{{ article.img }}"
