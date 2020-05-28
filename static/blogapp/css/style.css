@@ -5,6 +5,7 @@ Author:         yixieshi
 Author URI:     http: //yixieshi.com/
 Version:        2.0
 */
+/*html{filter: grayscale(100%)}*/
 html { width: 100%; height: 100%; word-break: break-all; word-wrap: break-word; }
 body { margin: 0; font-size: 14px; line-height: 20px; font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif; background-color: #F1F1F1; color: #333; width: 100%; min-height: 100%; position: relative; }
 ul { list-style: none; padding: 0; margin: 0; }
